@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Valentine's Quiz ❤️</h1>
+            <a href="index.html" class="back-link">Back to Main Page</a>
+        </header>
+        <main>
+            <form id="valentinesQuiz" onsubmit="return checkAnswers(event)">
+                <div class="question">
+                    <label for="q1">What's our anniversary date?</label>
+                    <input type="date" id="q1" name="q1" required>
+                </div>
+
+                <div class="question">
+                    <label for="song">What's our song?</label>
+                    <input type="text" id="song" name="song" required>
+                </div>
+
+                <div class="question">
+                    <label for="q2">What's my favorite flower?</label>
+                    <select id="q2" name="q2" required>
+                        <option value="">Choose an option</option>
+                        <option value="rose">Rose</option>
+                        <option value="lily">Lily</option>
+                        <option value="sunflower">Sunflower</option>
+                        <option value="daisy">Daisy</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label>What games do we regularaly play collaboratively? (Choose all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="wordle" name="games" value="wordle">
+                        <label for="wordle">Wordle</label>
+
+                        <input type="checkbox" id="connections" name="games" value="connections">
+                        <label for="connections">Connections</label>
+
+                        <input type="checkbox" id="mini" name="games" value="mini">
+                        <label for="mini">The Mini</label>
+
+                        <input type="checkbox" id="cryptic" name="games" value="cryptic">
+                        <label for="cryptic">Cryptic</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>What was the first drink you ordered on our first date?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="manhattan" name="firstDate" value="manhattan" required>
+                        <label for="manhattan">Manhattan</label>
+
+                        <input type="radio" id="margarita" name="firstDate" value="margarita">
+                        <label for="margarita">Margarita</label>
+
+                        <input type="radio" id="blackfizz" name="firstDate" value="blackfizz">
+                        <label for="blackfizz">Black Fizz</label>
+
+                        <input type="radio" id="martini" name="firstDate" value="martini">
+                        <label for="martini">Espresso Martini</label>
+                    </div>
+                </div>
+
+                <button type="submit">Submit Answers</button>
+            </form>
+            <div id="result" style="display: none;"></div>
+        </main>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>

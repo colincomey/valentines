@@ -24,3 +24,57 @@ button {
 button:hover {
     background-color: #ff3385;
 }
+
+/* Quiz Styles */
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 15px;
+    background-color: #fff5f8;
+    border-radius: 5px;
+}
+
+.checkbox-group, .radio-group {
+    margin-top: 10px;
+}
+
+.checkbox-group label, .radio-group label {
+    margin-right: 15px;
+}
+
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.quiz-link, .back-link {
+    display: inline-block;
+    margin: 10px 0;
+    color: #ff66b2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quiz-link:hover, .back-link:hover {
+    color: #ff3385;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.correct {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+}
