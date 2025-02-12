@@ -4,17 +4,19 @@ function checkAnswers(event) {
     // Get form responses
     const anniversary = document.getElementById('q1').value;
     const song = document.getElementById('song').value.toLowerCase();
-    const flower = document.getElementById('q2').value;
+    const wine = document.getElementById('wine').value;
     const games = Array.from(document.querySelectorAll('input[name="games"]:checked')).map(cb => cb.value);
     const firstDate = document.querySelector('input[name="firstDate"]:checked')?.value;
+    const valentine = document.querySelector('input[name="valentine"]:checked')?.value;
 
     // Set correct answers (customize these!)
     const correctAnswers = {
         anniversary: '2023-01-26', // Change this to your actual anniversary
-        flower: 'rose',
+        wine: 'cabslob',
         games: ['connections', 'mini'], // Change these to the correct colors
         firstDate: 'blackfizz', // Change this to the correct location
-        song: 'material girl'
+        song: 'material girl',
+        valentine : 'yes'
     };
 
     // Calculate score
@@ -37,12 +39,12 @@ function checkAnswers(event) {
         feedback.push("❌ Our song is " + correctAnswers.anniversary);
     }
 
-    // Check flower
-    if (flower === correctAnswers.flower) {
+    // Check wine
+    if (wine === correctAnswers.wine) {
         score++;
-        feedback.push("✅ You know my favorite flower!");
+        feedback.push("✅ Yeyy Cayspah!");
     } else {
-        feedback.push("❌ My favorite flower is " + correctAnswers.flower);
+        feedback.push("❌ Casper's favourite wine is in fact " + correctAnswers.flower);
     }
 
     // Check colors
@@ -63,12 +65,20 @@ function checkAnswers(event) {
         feedback.push("❌ Our first date was at the " + correctAnswers.firstDate);
     }
 
+        // Check valentine
+        if (valentine === correctAnswers.valentine) {
+            score++;
+            feedback.push("✅ YAYYYY!");
+        } else {
+            feedback.push("❌ NAURRRR");
+        }
+
     // Display results
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
-        <h2>Score: ${score}/5</h2>
+        <h2>Score: ${score}/6</h2>
         ${feedback.join('<br>')}
-        ${score === 5 ? '<h3>Perfect Score! You know me so well! ❤️</h3>' : '<h3>Keep learning about us! 😊</h3>'}
+        ${score === 6 ? '<h3>Perfect Score! You\'re the best girlfriend ever! ❤️</h3>' : '<h3>Not quite. But you\'re still the best girlfriend ever! 😊</h3>'}
     `;
     resultDiv.style.display = 'block';
     resultDiv.className = score === 5 ? 'correct' : 'incorrect';
