@@ -62,7 +62,7 @@ function checkAnswers(event) {
         score++;
         feedback.push("✅ You remember our first date!");
     } else {
-        feedback.push("❌ Our first date was at the " + correctAnswers.firstDate);
+        feedback.push("❌ The first drink you ordered was ; " + correctAnswers.firstDate);
     }
 
         // Check valentine
@@ -78,10 +78,12 @@ function checkAnswers(event) {
     resultDiv.innerHTML = `
         <h2>Score: ${score}/6</h2>
         ${feedback.join('<br>')}
-        ${score === 6 ? '<h3>Perfect Score! You\'re the best girlfriend ever! ❤️</h3>' : '<h3>Not quite. But you\'re still the best girlfriend ever! 😊</h3>'}
+        ${score === 6 ? '<h3>Perfect Score! You\'re the best girlfriend ever! ❤️<br><button onclick="window.location.href=\'limerick.html\'">Click for your surprise!</button>':  '<h3>Not quite. But you\'re still the best girlfriend ever! 😊</h3>'}
     `;
     resultDiv.style.display = 'block';
-    resultDiv.className = score === 5 ? 'correct' : 'incorrect';
+    resultDiv.className = score === 6 ? 'correct' : 'incorrect';
 
     return false;
 }
+
+

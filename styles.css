@@ -94,3 +94,12 @@ input[type="text"]:focus {
     box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
 }
 
+ /* Limerick styles*/
+ .message {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
+
+
+
